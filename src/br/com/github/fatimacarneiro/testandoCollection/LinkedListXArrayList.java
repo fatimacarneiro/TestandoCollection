@@ -9,61 +9,73 @@ public class LinkedListXArrayList {
         List<Padawan> padawanArrayList = new ArrayList<>();
         List<Padawan> padawanLinkedList = new LinkedList<>();
 
-      //  ___________________________
+        //inserção
+        long resultadoAdicaoArrayList = calculaTempoInsencao(padawanArrayList);
+        long resultadoAdicaoLinkedList = calculaTempoInsencao(padawanLinkedList);
 
-        long tempoAntesLinked = System.currentTimeMillis();
+        System.out.println("Tempo inserção LinkedList: " + resultadoAdicaoLinkedList);
+        System.out.println("Tempo inserção ArrayList: " + resultadoAdicaoArrayList);
 
-        for (int i = 0; i < 100000; i++) {
-            Padawan padawan = new Padawan("Pizinho " + i, "aprendizes", 1,2);
-            padawanLinkedList.add(padawan);
-        }
+        //remoção
+        long resultadoRemocaoArrayList = calculaTempoRemocao(padawanArrayList);
+        long resultadoRemocaoLinkedList = calculaTempoRemocao(padawanLinkedList);
 
-        long tempoDepoisLinked = System.currentTimeMillis();
+        System.out.println("Tempo remoção LinkedList: " + resultadoRemocaoLinkedList);
+        System.out.println("Tempo remoção ArrayList: " + resultadoRemocaoArrayList);
 
-
-        long tempoAntesArray = System.currentTimeMillis();
-
-        for (int i = 0; i < 100000; i++) {
-            Padawan padawan = new Padawan("Cestarinhos " + i, "aprendizes", 1,2);
-            padawanArrayList.add(padawan);
-        }
-
-        long tempoDepoisArray = System.currentTimeMillis();
-
-        System.out.println("Tempo inserção LinkedList: ");
-        System.out.println(tempoDepoisLinked - tempoAntesLinked);
-        System.out.println("Tempo inserção ArrayList: ");
-        System.out.println(tempoDepoisArray - tempoAntesArray);
-
-        // -------------------------------------------------------------
-
-        //REMOVER
-
-        long tempoAntesRemocaoArray = System.currentTimeMillis();
-
-        for (int i = 0; i < 1000; i++) {
-            padawanArrayList.remove(0);
-        }
-
-        long tempoDepoisRemocaoArray = System.currentTimeMillis();
-
-        //_______________________
-
-        long tempoAntesRemocaoLinked = System.currentTimeMillis();
-
-        for (int i = 0; i < 1000; i++) {
-            padawanLinkedList.remove(0);
-        }
-
-        long tempoDepoisRemocaoLinked = System.currentTimeMillis();
+        //exibir listas
+        //long resultadoExibicaoArray = calculaTempoExibir(padawanArrayList);
+        //long resultadoExibicaoLinked = calculaTempoExibir(padawanLinkedList);
 
 
-        System.out.println("Tempo remoção ArrayList: ");
-        System.out.println(tempoDepoisRemocaoArray - tempoAntesRemocaoArray);
-        System.out.println("Tempo remoção LinkedList: ");
-        System.out.println(tempoDepoisRemocaoLinked - tempoAntesRemocaoLinked);
 
+
+//        padawanArrayList.sort(Comparator.comparing(padawan -> padawan.getNome()));
+//
+//        padawanArrayList.forEach(System.out::println);
+//
+//        padawanLinkedList.forEach(padawan -> {
+//            System.out.println(padawan);
+//        });
 
 
     }
+
+    public static long calculaTempoInsencao(List<Padawan> listaPadawan){
+        long tempoAntes = System.currentTimeMillis();
+
+        for (int i = 0; i < 100000; i++) {
+            Padawan padawan = new Padawan("Pizinho " + i, "aprendizes", 1,2);
+            listaPadawan.add(padawan);
+        }
+
+        long tempoDepois = System.currentTimeMillis();
+
+        return tempoDepois- tempoAntes;
+    }
+
+    public static long calculaTempoRemocao(List<Padawan> listaPadawan){
+        long tempoAntes = System.currentTimeMillis();
+
+        for (int i = 0; i < 100000; i++) {
+            listaPadawan.remove(0);
+        }
+
+        long tempoDepois = System.currentTimeMillis();
+
+        return tempoDepois- tempoAntes;
+    }
+
+    /*public static long calculaTempoExibicao(List<Padawan> listaPadawan){
+        long tempoAntes = System.currentTimeMillis();
+
+        listaPadawan.forEach(padawan -> {
+            System.out.println(padawan);
+        });
+
+        long tempoDepois = System.currentTimeMillis();
+
+        return tempoDepois- tempoAntes;
+    }
+    */
 }
