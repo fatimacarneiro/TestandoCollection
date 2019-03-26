@@ -1,17 +1,21 @@
 package br.com.github.fatimacarneiro.testandoCollection;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class LinkedListXArrayList {
 
     public static void main(String[] args) {
 
-        List<Padawan> padawanArrayList = new ArrayList<>();
         List<Padawan> padawanLinkedList = new LinkedList<>();
+        List<Padawan> padawanArrayList = new ArrayList<>();
 
         //inserção
-        long resultadoAdicaoArrayList = calculaTempoInsencao(padawanArrayList);
+
         long resultadoAdicaoLinkedList = calculaTempoInsencao(padawanLinkedList);
+        long resultadoAdicaoArrayList = calculaTempoInsencao(padawanArrayList);
 
         System.out.println("Tempo inserção LinkedList: " + resultadoAdicaoLinkedList);
         System.out.println("Tempo inserção ArrayList: " + resultadoAdicaoArrayList);
@@ -44,7 +48,7 @@ public class LinkedListXArrayList {
     public static long calculaTempoInsencao(List<Padawan> listaPadawan){
         long tempoAntes = System.currentTimeMillis();
 
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1000000; i++) {
             Padawan padawan = new Padawan("Pizinho " + i, "aprendizes", 1,2);
             listaPadawan.add(padawan);
         }
@@ -78,4 +82,5 @@ public class LinkedListXArrayList {
         return tempoDepois- tempoAntes;
     }
     */
+
 }
