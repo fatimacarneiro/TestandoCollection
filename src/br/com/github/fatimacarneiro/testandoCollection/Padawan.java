@@ -1,8 +1,9 @@
 package br.com.github.fatimacarneiro.testandoCollection;
 
+import java.util.Comparator;
 import java.util.Date;
 
-public class Padawan {
+public class Padawan implements Comparator {
    private String nome;
    private String cargo;
    private int nivel;
@@ -24,5 +25,14 @@ public class Padawan {
 
     public String getNome() {
         return nome;
+    }
+
+    @Override
+    public int compare(Object o1, Object o2) {
+        return 0;
+    }
+
+    public int getIdade() {
+        return idade;
     }
 }

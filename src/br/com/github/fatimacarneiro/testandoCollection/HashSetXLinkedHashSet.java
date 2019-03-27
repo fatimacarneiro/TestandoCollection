@@ -1,8 +1,10 @@
 package br.com.github.fatimacarneiro.testandoCollection;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import com.sun.codemodel.internal.JForEach;
+
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class HashSetXLinkedHashSet {
 
@@ -21,7 +23,14 @@ public class HashSetXLinkedHashSet {
         padawanHashSet.add(padawan4);
         padawanHashSet.add(padawanTeste);
 
-        System.out.println(padawanHashSet);
+        padawanHashSet.forEach(new Consumer<Padawan>() {
+            @Override
+            public void accept(Padawan padawan) {
+                System.out.println(padawan);
+            }
+        });
+
+        System.out.println("\n" + "\n");
 
 
         Set<Padawan> padawanLinkedHashSet = new LinkedHashSet<>();
@@ -31,6 +40,11 @@ public class HashSetXLinkedHashSet {
         padawanLinkedHashSet.add(padawan4);
         padawanLinkedHashSet.add(padawanTeste);
 
-        System.out.println(padawanLinkedHashSet);
+        padawanLinkedHashSet.forEach(padawan -> System.out.println(padawan));
+        System.out.println("\n" + "\n");
+
+        padawanHashSet.stream().filter(padawan -> padawan.getIdade() >= 23).forEach(System.out::println);
+
+
     }
 }
