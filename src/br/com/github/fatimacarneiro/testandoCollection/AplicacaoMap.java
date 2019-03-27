@@ -19,17 +19,13 @@ public class AplicacaoMap {
         padawanMap.put(8, "Chewbacca");
         padawanMap.put(5, "Cestaro");
 
-
         System.out.println(padawanMap);
         System.out.println("\n");
-
 
         padawanMap.put(1, "Substituindo valor");
 
-
         System.out.println(padawanMap);
         System.out.println("\n");
-
 
        //_________________________________________________________________
 
@@ -46,13 +42,10 @@ public class AplicacaoMap {
         padawanLinkedHashMap.put(8, "Chewbacca");
         padawanLinkedHashMap.put(5, "Cestaro");
 
-
         System.out.println(padawanLinkedHashMap);
         System.out.println("\n");
 
-
         padawanLinkedHashMap.put(1, "Substituindo valor");
-
 
         System.out.println(padawanLinkedHashMap);
         System.out.println("\n");
@@ -71,13 +64,10 @@ public class AplicacaoMap {
         padawanTreeMap.put(8, "Chewbacca");
         padawanTreeMap.put(5, "Cestaro");
 
-
         System.out.println(padawanTreeMap);
         System.out.println("\n");
 
-
         padawanTreeMap.put(1, "Substituindo valor");
-
 
         System.out.println(padawanTreeMap);
         System.out.println("\n");
@@ -96,12 +86,5 @@ public class AplicacaoMap {
 //
 //        padawanTreeMap.put(5, new Padawan("Outro teste", "testador", 1, 1));
 //        padawanTreeMap.forEach((numero, padawan) -> System.out.println(padawan));
-
-
-
-
-
-
-
-
+        
     }}
