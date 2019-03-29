@@ -23,7 +23,9 @@ public class ListXSet {
         padawanHashSet.add(padawan4);
         padawanHashSet.add(padawanTeste);
 
-        System.out.println(padawanHashSet);
+        System.out.println("Teste do HashSet");
+        padawanHashSet.forEach(System.out::println);
+        System.out.println("\n");
 
         List<Padawan> padawanArrayList = new ArrayList<>();
         padawanArrayList.add(padawan1);
@@ -32,7 +34,8 @@ public class ListXSet {
         padawanArrayList.add(padawan4);
         padawanArrayList.add(padawanTeste);
 
-        System.out.println(padawanArrayList);
+        System.out.println("Teste do ArrayList");
+        padawanArrayList.forEach(padawan -> System.out.println(padawan));
 
     }
 

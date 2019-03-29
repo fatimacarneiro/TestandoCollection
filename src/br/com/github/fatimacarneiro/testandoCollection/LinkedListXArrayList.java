@@ -27,6 +27,7 @@ public class LinkedListXArrayList {
         System.out.println("Tempo remoção LinkedList: " + resultadoRemocaoLinkedList);
         System.out.println("Tempo remoção ArrayList: " + resultadoRemocaoArrayList);
 
+
         //exibir listas
         //long resultadoExibicaoArray = calculaTempoExibir(padawanArrayList);
         //long resultadoExibicaoLinked = calculaTempoExibir(padawanLinkedList);
@@ -61,7 +62,7 @@ public class LinkedListXArrayList {
     public static long calculaTempoRemocao(List<Padawan> listaPadawan){
         long tempoAntes = System.currentTimeMillis();
 
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 10000; i++) {
             listaPadawan.remove(0);
         }
 

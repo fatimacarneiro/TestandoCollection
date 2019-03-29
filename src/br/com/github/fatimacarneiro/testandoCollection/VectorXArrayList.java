@@ -17,18 +17,10 @@ public class VectorXArrayList {
         long resultadoAdicaoVector = calculaTempoInsencao(padawanVector);
         long resultadoAdicaoArrayList = calculaTempoInsencao(padawanArrayList);
 
-
-
         System.out.println("Tempo inserção Vector: " + resultadoAdicaoVector);
         System.out.println("Tempo inserção ArrayList: " + resultadoAdicaoArrayList);
 
-        //remoção
-        long resultadoRemocaoArrayList = calculaTempoRemocao(padawanArrayList);
-        long resultadoRemocaoVector = calculaTempoRemocao(padawanVector);
 
-
-        System.out.println("Tempo remoção ArrayList: " + resultadoRemocaoArrayList);
-        System.out.println("Tempo remoção Vector: " + resultadoRemocaoVector );
     }
 
     public static long calculaTempoInsencao(List<Padawan> listaPadawan){
@@ -44,15 +36,4 @@ public class VectorXArrayList {
         return tempoDepois- tempoAntes;
     }
 
-    public static long calculaTempoRemocao(List<Padawan> listaPadawan){
-        long tempoAntes = System.currentTimeMillis();
-
-        for (int i = 0; i < 100000; i++) {
-            listaPadawan.remove(0);
-        }
-
-        long tempoDepois = System.currentTimeMillis();
-
-        return tempoDepois- tempoAntes;
-    }
 }

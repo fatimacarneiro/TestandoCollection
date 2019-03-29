@@ -19,6 +19,7 @@ public class AplicacaoMap {
         padawanMap.put(8, "Chewbacca");
         padawanMap.put(5, "Cestaro");
 
+        System.out.println("Começa o HashMap");
         System.out.println(padawanMap);
         System.out.println("\n");
 
@@ -71,20 +72,5 @@ public class AplicacaoMap {
 
         System.out.println(padawanTreeMap);
         System.out.println("\n");
-
-//        padawanTreeMap.put(1, new Padawan("Camila", "Aprendiz", 3, 26));
-//        padawanTreeMap.put(2, new Padawan("Fatima", "Aprendiz", 3, 23));
-//        padawanTreeMap.put(3, new Padawan("José", "Aprendiz", 3, 20));
-//        padawanTreeMap.put(4, new Padawan("Wesley", "Aprendiz", 3, 20));
-//        padawanTreeMap.put(5, new Padawan("teste", "teste", 0, 0));
-//
-//        System.out.println("\n");
-//
-//        padawanTreeMap.forEach((numero, padawan) -> System.out.println(padawan));
-//
-//        System.out.println("\n");
-//
-//        padawanTreeMap.put(5, new Padawan("Outro teste", "testador", 1, 1));
-//        padawanTreeMap.forEach((numero, padawan) -> System.out.println(padawan));
         
     }}
